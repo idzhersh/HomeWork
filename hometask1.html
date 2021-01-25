@@ -58,6 +58,130 @@
     // console.log(func(331))
 
 
+    //     function divisor(n, factor) {
+        //       var divisor = 1;
+        //       while (n % factor == 0) {
+        //           n = n / factor;
+        //           divisor = divisor * factor;
+        //       }
+        //       return divisor;
+        //   }
+        
+        //   function getPrimesUntil(n) {
+        //     // Prime sieve algorithm
+        //     var range = Math.trunc(Math.sqrt(n)) + 1;
+        //     var isPrime = Array(n).fill(1);
+        //     var primes = [2];
+        //     for (var m = 3; m < range; m += 2) {
+        //         if (isPrime[m]) {
+        //             primes.push(m);
+        //             for (var k = m * m; k <= n; k += m) {
+        //                 isPrime[k] = 0;
+        //             }
+        //         }
+        //     }
+        //     for (var m = range; m <= n; m += 2) {
+        //         if (isPrime[m]) primes.push(m);
+        //     }
+        //     return {
+        //         primes: primes,
+        //         factorize: function (n) {
+        //             var p, count, primeFactors;
+        //             // Trial division algorithm
+        //             if (n < 2) return [];
+        //             primeFactors = [];
+        //             for (p of this.primes) {
+        //                 count = 0;
+        //                 while (n % p == 0) {
+        //                     count++;
+        //                     n /= p;
+        //                 }
+        //                 if (count) primeFactors.push({value: p, count: count});
+        //             }
+        //             if (n > 1) {
+        //                 primeFactors.push({value: n, count: 1});
+        //             }
+        //             return primeFactors;
+        //         }
+        //     }
+        // }
+        
+        // function squareTerms4(n) {
+        //   var n1, n2, n3, n4, sq, sq1, sq2, sq3, sq4, primes, factors, f, f3, factors3, ok,
+        //       res1, res2, res3, res4;
+        //   primes = getPrimesUntil(n);
+        //   factors = primes.factorize(n);
+        //   res1 = n > 0 ? 1 : 0;
+        //   res2 = res3 = res4 = 0;
+        //   for (f of factors) { // For each of the factors:
+        //       n1 = f.value;
+        //       // 1. Find a suitable first square
+        //       for (sq1 = Math.trunc(Math.sqrt(n1)); sq1>0; sq1--) {
+        //           n2 = n1 - sq1*sq1;
+        //           // A number can be written as a sum of three squares
+        //           // <==> it is NOT of the form 4^a(8b+7)
+        //           if ( (n2 / divisor(n2, 4)) % 8 !== 7 ) break; // found a possibility
+        //       }
+        //       // 2. Find a suitable second square
+        //       for (sq2 = Math.trunc(Math.sqrt(n2)); sq2>0; sq2--) {
+        //           n3 = n2 - sq2*sq2;
+        //           // A number can be written as a sum of two squares
+        //           // <==> all its prime factors of the form 4a+3 have an even exponent
+        //           factors3 = primes.factorize(n3);
+        //           ok = true;
+        //           for (f3 of factors3) {
+        //               ok = (f3.value % 4 != 3) || (f3.count % 2 == 0);
+        //               if (!ok) break;
+        //           }
+        //           if (ok) break;
+        //       }
+        //       // To save time: extract the largest square divisor from the previous factorisation:
+        //       sq = 1;
+        //       for (f3 of factors3) {
+        //           sq *= Math.pow(f3.value, (f3.count - f3.count % 2) / 2); 
+        //           f3.count = f3.count % 2;
+        //       }
+        //       n3 /= sq*sq;
+        //       // 3. Find a suitable third square
+        //       sq4 = 0;
+        //       // b. Find square for the remaining value:
+        //       for (sq3 = Math.trunc(Math.sqrt(n3)); sq3>0; sq3--) {
+        //           n4 = n3 - sq3*sq3;
+        //           // See if this yields a sum of two squares:
+        //           sq4 = Math.trunc(Math.sqrt(n4));
+        //           if (n4 == sq4*sq4) break; // YES!
+        //       }
+        //       // Incorporate the square divisor back into the step-3 result:
+        //       sq3 *= sq;
+        //       sq4 *= sq;
+        //       // 4. Merge this quadruple of squares with any previous 
+        //       // quadruple we had, using the Euler square identity:
+        //       while (f.count--) {
+        //           [res1, res2, res3, res4] = [
+        //               Math.abs(res1*sq1 + res2*sq2 + res3*sq3 + res4*sq4),
+        //               Math.abs(res1*sq2 - res2*sq1 + res3*sq4 - res4*sq3),
+        //               Math.abs(res1*sq3 - res2*sq4 - res3*sq1 + res4*sq2),
+        //               Math.abs(res1*sq4 + res2*sq3 - res3*sq2 - res4*sq1)
+        //           ];
+        //       }
+        //   }
+        //   console.log(res1*res1+', '+res2*res2+', '+res3*res3+', '+res4*res4)
+        //   // Return the 4 squares in descending order (for convenience):
+        //   return [res1, res2, res3, res4].sort( (a,b) => b-a );
+        // }
+        
+        
+        // console.log(squareTerms4(65165143))
+        // console.log(squareTerms4(6516514))
+        // console.log(squareTerms4(651651))
+        // console.log(squareTerms4(65165))
+        // console.log(squareTerms4(6516))
+        // console.log(squareTerms4(651))
+        // console.log(squareTerms4(65))
+        // console.log(squareTerms4(6))
+        
+        
+
     </script>
 </body>
 </html>
